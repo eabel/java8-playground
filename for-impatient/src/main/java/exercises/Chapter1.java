@@ -147,7 +147,7 @@ public class Chapter1 {
     public static void exercise8() {
         System.out.println("Exercise 8");
         String[] names = {"Peter", "Paul", "Mary"};
-        List<Runnable> runnersEnhancedLoop = new ArrayList();
+        List<Runnable> runnersEnhancedLoop = new ArrayList<>();
         for(String name: names){
             runnersEnhancedLoop.add(() -> System.out.println(name));
         }
@@ -161,8 +161,7 @@ public class Chapter1 {
         }
 
         List<Runnable> runnersNormalLoop = new ArrayList<>();
-        for(int i=0; i< names.length; i++){
-            String name = names[i];
+        for (String name : names) {
             runnersNormalLoop.add(() -> System.out.println(name));
         }
 
