@@ -12,14 +12,14 @@ import java.util.function.Predicate;
 
 public class Chapter1 {
     public static void main(String[] args) {
-//        exercise1();
-//        exercise2(new File("C:\\Program Files"));
-//        exercise3(new File("D:\\programming-code\\intellij-workspace\\src\\chapter1"), ".java");
-//        exercise4(new File("C:\\").listFiles());
-//        exercise6();
-//        exercise7();
-//        exercise8();
-//        exercise9();
+        exercise1();
+        exercise2(new File("C:\\Program Files"));
+        exercise3(new File("D:\\programming-code\\intellij-workspace\\src\\chapter1"), ".java");
+        exercise4(new File("C:\\").listFiles());
+        exercise6();
+        exercise7();
+        exercise8();
+        exercise9();
     }
 
 
@@ -125,15 +125,9 @@ public class Chapter1 {
         };
     }
 
-    @FunctionalInterface
-    interface RunnableEx {
-        void run() throws Exception;
-    }
-
-
     public static void exercise7() {
         System.out.println("Exercise 7");
-        Runnable then = andThen(() -> System.out.println("r1"), ()-> System.out.println("r2"));
+        Runnable then = andThen(() -> System.out.println("r1"), () -> System.out.println("r2"));
         new Thread(then).start();
     }
 
@@ -178,6 +172,11 @@ public class Chapter1 {
 
         myWordList.forEachIf(System.out::println,(elem) -> elem.length() > 7);
 
+    }
+
+    @FunctionalInterface
+    interface RunnableEx {
+        void run() throws Exception;
     }
 
     private interface Collection2<T> extends Collection<T> {
